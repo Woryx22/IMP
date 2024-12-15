@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.bgi{
+    background-image: url("./images/imgbg.png");
+}
