@@ -6,3 +6,6 @@
 .bgi{
     background-image: url("./images/imgbg.png");
 }
+html{
+    scroll-behavior: smooth;
+}

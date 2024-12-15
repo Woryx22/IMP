@@ -3,7 +3,7 @@ import { Bars3Icon, XMarkIcon, UserCircleIcon } from '@heroicons/react/24/outlin
 
 const navigation = [
     { name: 'Úvod', href: '#', current: false },
-    { name: 'Nabídka', href: '#', current: false },
+    { name: 'Nabídka', href: '#offer', current: false },
     { name: 'Svatební focení', href: '#', current: false },
     { name: 'Portfolio', href: '#', current: false },
     { name: 'Kontakty', href: '#', current: false },
@@ -15,10 +15,12 @@ function classNames(...classes) {
 
 export default function Header() {
     return (
-        <Disclosure as="nav" className="bg-gray-600 sticky top-0">
+        <Disclosure as="nav" className="bg-gray-600 bg-opacity-75 sticky top-0 z-10">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
-
+                {/* <div className="flex items-center">
+                        <span className="text-white text-xl font-bold">Kateřina Horáčková</span>
+                    </div> */}
 
                     {/*Mobile*/}
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -33,13 +35,9 @@ export default function Header() {
                     </div>
 
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                        {/* <div className="flex shrink-0 items-center">
-                            <img
-                                alt="Your Company"
-                                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
-                                className="h-8 w-auto"
-                            />
-                        </div> */}
+                        <div className="flex shrink-0 items-center xl:mr-10">
+                            <span className="font-bold text-white">Kateřina Horáčková</span>
+                        </div>
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
