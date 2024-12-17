@@ -3,8 +3,8 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react
 import { Bars3Icon, XMarkIcon, UserCircleIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
-    { name: 'Úvod', href: '#introduction', current: false },
-    { name: 'Nabídka', href: '#introduction', current: false },
+    { name: 'O mně', href: '#introduction', current: false },
+    { name: 'Nabídka', href: '#offer', current: false },
     { name: 'Svatební focení', href: '#', current: false },
     { name: 'Portfolio', href: '#', current: false },
     { name: 'Kontakty', href: '#', current: false },
@@ -57,7 +57,7 @@ export default function Header() {
 
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <div className="flex shrink-0 items-center xl:mr-10">
-                            <span className="font-bold text-white">Kateřina Horáčková</span>
+                            <span className="font-bold text-white"><a href="#">Kateřina Horáčková</a></span>
                         </div>
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
