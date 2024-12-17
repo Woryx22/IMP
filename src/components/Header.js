@@ -1,31 +1,52 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon, UserCircleIcon } from '@heroicons/react/24/outline'
+import { useEffect, useState } from 'react';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon, UserCircleIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
-    { name: 'Úvod', href: '#', current: false },
-    { name: 'Nabídka', href: '#offer', current: false },
+    { name: 'Úvod', href: '#introduction', current: false },
+    { name: 'Nabídka', href: '#introduction', current: false },
     { name: 'Svatební focení', href: '#', current: false },
     { name: 'Portfolio', href: '#', current: false },
     { name: 'Kontakty', href: '#', current: false },
-]
+];
 
 function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+    return classes.filter(Boolean).join(' ');
 }
 
 export default function Header() {
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                // Scroll down
+                setIsVisible(false);
+            } else {
+                // Scroll up
+                setIsVisible(true);
+            }
+
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [lastScrollY]);
+
     return (
-        <Disclosure as="nav" className="bg-gray-600 bg-opacity-75 sticky top-0 z-10">
+        <Disclosure as="nav" className={`bg-gray-600 bg-opacity-75 fixed top-0 z-10 w-full transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
-                {/* <div className="flex items-center">
-                        <span className="text-white text-xl font-bold">Kateřina Horáčková</span>
-                    </div> */}
-
                     {/*Mobile*/}
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-
-                        {/* Mobile menu button*/}
+                        {/* Mobile menu button */}
                         <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                             <span className="absolute -inset-0.5" />
                             <span className="sr-only">Open main menu</span>
@@ -46,8 +67,8 @@ export default function Header() {
                                         href={item.href}
                                         aria-current={item.current ? 'page' : undefined}
                                         className={classNames(
-                                            item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                            'rounded-md px-3 py-2 text-sm font-medium',
+                                            item.current ? 'bg-gray-900 text-white' : 'text-gray-100 hover:bg-gray-700 hover:text-white',
+                                            'rounded-md px-3 py-2 text-sm font-medium'
                                         )}
                                     >
                                         {item.name}
@@ -78,8 +99,8 @@ export default function Header() {
                             href={item.href}
                             aria-current={item.current ? 'page' : undefined}
                             className={classNames(
-                                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                'block rounded-md px-3 py-2 text-base font-medium',
+                                item.current ? 'bg-gray-900 text-white' : 'text-gray-100 hover:bg-gray-700 hover:text-white',
+                                'block rounded-md px-3 py-2 text-base font-medium'
                             )}
                         >
                             {item.name}
@@ -88,5 +109,5 @@ export default function Header() {
                 </div>
             </DisclosurePanel>
         </Disclosure>
-    )
+    );
 }
