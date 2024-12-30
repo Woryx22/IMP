@@ -1,3 +1,4 @@
+import Contact from "./components/Contact"
 import Header from "./components/Header"
 import Introduction from "./components/Introduction"
 import Main from "./components/Main"
@@ -11,6 +12,7 @@ const App = () => {
       <Main />
       <Introduction />
       <Offer />
+      <Contact/>
 
     </div>
 

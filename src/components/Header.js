@@ -5,9 +5,9 @@ import { Bars3Icon, XMarkIcon, UserCircleIcon } from '@heroicons/react/24/outlin
 const navigation = [
     { name: 'O mně', href: '#introduction', current: false },
     { name: 'Nabídka', href: '#offer', current: false },
-    { name: 'Svatební focení', href: '#', current: false },
-    { name: 'Portfolio', href: '#', current: false },
-    { name: 'Kontakty', href: '#', current: false },
+    { name: 'Svatební focení', href: '#offer', current: false },
+    { name: 'Portfolio', href: '#offer', current: false },
+    { name: 'Kontakty', href: '#contact', current: false },
 ];
 
 function classNames(...classes) {
@@ -25,6 +25,7 @@ export default function Header() {
             if (currentScrollY > lastScrollY && currentScrollY > 100) {
                 // Scroll down
                 setIsVisible(false);
+                
             } else {
                 // Scroll up
                 setIsVisible(true);
@@ -57,7 +58,7 @@ export default function Header() {
 
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <div className="flex shrink-0 items-center xl:mr-10">
-                            <span className="font-bold text-white"><a href="#">Kateřina Horáčková</a></span>
+                            <span className="font-bold text-white"><a href="#main">Kateřina Horáčková</a></span>
                         </div>
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
