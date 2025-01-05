@@ -5,6 +5,8 @@ const cors = require("cors")
 const obrazky = require("./schemas/obrazky.js")
 const path = require('path')
 
+const fs = require("fs")
+
 var url = "mongodb://localhost:27017/IMP";
 
 mongoose.connect(url)
@@ -16,7 +18,7 @@ const storage = multer.diskStorage({
         callback(null, __dirname + "/images/galery")
     },
     filename: function (req, file, callback){
-        callback(null, file.originalname + ".jpg")
+        callback(null, file.fieldname + ".jpg")
     }
 })
 
@@ -29,17 +31,38 @@ app.use(express.static(path.join(__dirname, "/images")))
 app.get('/', (req, res) =>{
     res.send("lomeno")
 })
+//ziskani vsech obrazku z galerie
 app.get('/getAllImages', (req, res) =>{
     obrazky.find()
-        .then((queryResponse) => { console.log(queryResponse)})
-
-
-    res.send("obrazky")
+        .then((queryResponse) => {
+             res.send(queryResponse)
+            })
 })
-app.post('/uploadImage', upload.single("image") ,(req, res) =>{
+//smazani obrazku z galerie
+app.delete('/deleteImages', async (req, res) =>{
+    console.log(req.query.id)
 
+    await obrazky.findOneAndDelete({_id: req.query.id})
+
+    console.log(req.query.name);
+
+    fs.unlink("./images/galery/" + req.query.name + ".jpg", (err) =>{
+        console.log(err)
+    })
+
+    res.send("DELETED")
+})
+//nahrani obrazku do galerie
+app.post('/uploadImage', upload.single("image") ,(req, res) =>{
+    console.log(req.file)
+    let novejobrazek = new obrazky({
+        name:req.file.fieldname,
+        sort:4
+    });
+    novejobrazek.save()
     res.send("uuuu")
 })
+//kontrola hesla
 app.get('/adminLogin', (req, res) =>{
     console.log(req.query.password)
     if(req.query.password == "AaAa"){

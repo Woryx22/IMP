@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom"
 import axios from "axios"
 import {useState} from "react"
 
-export default function AdminLogin() {
+export default function AdminLogin({setIsAdminLoggedIn}) {
     const navigate = useNavigate()
 
     const [passwordState, setPasswordState] = useState()
@@ -16,7 +16,10 @@ export default function AdminLogin() {
                 console.log(queryResponse.data)
                 if(queryResponse.data == "SUCCESS")
                 {
-                    navigate("/adminPage")
+                    console.log(setIsAdminLoggedIn  )
+                    setIsAdminLoggedIn(true)
+                    navigate("/adminPage");
+                    
                 }
             })
     }
