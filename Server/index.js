@@ -18,7 +18,11 @@ const storage = multer.diskStorage({
         callback(null, __dirname + "/images/galery")
     },
     filename: function (req, file, callback){
-        callback(null, file.fieldname + ".jpg")
+        // callback(null, file.fieldname + ".jpg")
+        callback(null, file.originalname + ".jpg")
+
+        // const nameWithoutExt = path.parse(file.originalname).name;
+        // callback(null, `${nameWithoutExt}.jpg`);
     }
 })
 
@@ -56,7 +60,7 @@ app.delete('/deleteImages', async (req, res) =>{
 app.post('/uploadImage', upload.single("image") ,(req, res) =>{
     console.log(req.file)
     let novejobrazek = new obrazky({
-        name:req.file.fieldname,
+        name:req.file.originalname, //originalname
         sort:4
     });
     novejobrazek.save()
