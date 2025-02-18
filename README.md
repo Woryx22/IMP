@@ -6,5 +6,18 @@ Základní sestavení projektu, plně responzivní navbar, provizorní backgroun
 
 Dynamický navbar, navigace stránkou přes odkazující tlačítka v navbaru, připravené komponenty. Teď už jen doplnit text a obrázky... A ten zbytek. 😊
 
+# 4. Konzultace
+
+Částečně funkční administrace (jen se z nějaké neznámého důvodu při ukládání nepojmenjue obrázek správně ale jmenuje se "image" a já to zaboha nemůžu najít, proto se vždy uloží jen jeden).
+
+  Pro zprovoznění webu:
+  
+  Docker:    Image mongodb:6 (na novější verzi nefungují nějaké používané commandy) --> docker pull mongo:6
+  
+  Volume --> docker run --name mongo-container -d -p 27017:27017 mongo:6
+      
+  Mongodb - jen connection na stejném portu (27017)
+      
+
 [React](https://react.dev/).
 [Tailwind](https://tailwindcss.com/).
