@@ -2,6 +2,9 @@ import "../index.css"
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
+import GalleryView from "./GalleryView";
+
+
 
 export default function Contact() {
 
@@ -48,6 +51,7 @@ export default function Contact() {
                     <input type="submit" value="Send" />
                 </form>
             </div>
+            <GalleryView/>
 
         </div>
     )
