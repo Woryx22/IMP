@@ -5,6 +5,8 @@ const cors = require("cors")
 const obrazky = require("./schemas/obrazky.js")
 const path = require('path')
 
+const bcrypt = require('bcryptjs');
+
 const fs = require("fs")
 
 var url = "mongodb://localhost:27017/IMP";
@@ -66,16 +68,28 @@ app.post('/uploadImage', upload.single("image") ,(req, res) =>{
     novejobrazek.save()
     res.send("uuuu")
 })
-//kontrola hesla
-app.get('/adminLogin', (req, res) =>{
-    console.log(req.query.password)
-    if(req.query.password == "AaAa"){
-        res.send("SUCCESS")
+
+
+const crypto = require('crypto');
+
+// Uložený hash hesla (tento hash by měl být uložen v databázi)
+const storedHash = crypto.createHash('sha256').update('AaAa').digest('base64');  // Tento hash odpovídá heslu "AaAa"
+
+// Kontrola hesla na serveru
+app.get('/adminLogin', (req, res) => {
+    const passwordFromClient = req.query.password;  // Heslo poslané z klienta (hashované)
+
+    console.log("Hashed password from client:", passwordFromClient);  // Debugging log
+
+    // Porovnání hashe od klienta s uloženým hashem
+    if (passwordFromClient === storedHash) {
+        res.send("SUCCESS");
+    } else {
+        res.send("WRONG");
     }
-    else{
-        res.send("WRONG")
-    }
-})
+});
+
+
 
 
 
