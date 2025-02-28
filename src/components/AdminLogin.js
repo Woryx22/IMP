@@ -8,8 +8,8 @@ export default function AdminLogin({ setIsAdminLoggedIn }) {
   const [passwordState, setPasswordState] = useState();
 
   const sendLogin = async () => {
-    // Hashujeme heslo na klientovi pomocí SHA-256
-    const hashedPassword = CryptoJS.SHA256(passwordState).toString(CryptoJS.enc.Base64);  // Používáme Base64 kódování pro odesílání hashovaného hesla
+    // Hash hesla (SHA256)
+    const hashedPassword = CryptoJS.SHA256(passwordState).toString(CryptoJS.enc.Base64);  // Base64 kódování
 
     // Odeslání hashe na server
     try {

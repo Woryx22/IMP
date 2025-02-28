@@ -47,19 +47,15 @@ export default function AdminPage({isAdminLoggedIn}) {
     }
 
     const uploadImage = () => {
-
-
         var formData = new FormData();
         formData.append("image", imageState, imageState.name)
-
         console.log(imageState)
-
         axios.post("http://localhost:3001/uploadImage", formData)
-            .then((queryResponse) => {
-                console.log(queryResponse.data)
-            })
-
-        loadAllImages()
+            .then(() => loadAllImages());
+        //     ((queryResponse) => {
+        //         console.log(queryResponse.data)
+        //     })
+        // loadAllImages()
     }
 
     return (

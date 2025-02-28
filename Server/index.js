@@ -73,13 +73,13 @@ app.post('/uploadImage', upload.single("image") ,(req, res) =>{
 const crypto = require('crypto');
 
 // Uložený hash hesla (tento hash by měl být uložen v databázi)
-const storedHash = crypto.createHash('sha256').update('AaAa').digest('base64');  // Tento hash odpovídá heslu "AaAa"
+const storedHash = crypto.createHash('sha256').update('AaAa').digest('base64');  // "AaAa"
 
 // Kontrola hesla na serveru
 app.get('/adminLogin', (req, res) => {
     const passwordFromClient = req.query.password;  // Heslo poslané z klienta (hashované)
 
-    console.log("Hashed password from client:", passwordFromClient);  // Debugging log
+    console.log("heslo z klienta:", passwordFromClient); 
 
     // Porovnání hashe od klienta s uloženým hashem
     if (passwordFromClient === storedHash) {
