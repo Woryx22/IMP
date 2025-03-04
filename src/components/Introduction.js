@@ -9,7 +9,7 @@ export default function Introduction() {
             </div>
             <div className="w-[100%] h-[100vh] grid gap-4 lg:gap-2 grid-cols-1 xl:grid-cols-2 justify-items-center content-center">
                 <div className=" w-[80vw] xl:w-[35vw] h-[35vh] xl:h-[75vh]  rounded-xl ">
-                <img src={kk} alt="aaa" className="w-full h-full object-cover rounded-xl" />
+                <img src={kk} alt="aaa" className="w-full h-full object-cover rounded-xl" loading="lazy" />
                 </div>
                 <div className="bg-[#4c4d6e] w-[80vw] xl:w-[35vw] h-[35vh] xl:h-[75vh] rounded-xl">
                     <h1 className="font bold text-2xl min[820px]:text-4xl lg:text-6xl font-bold text-white ms-10 mt-5">Něco o mně</h1>

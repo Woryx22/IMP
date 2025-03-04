@@ -17,13 +17,13 @@ export default function PairPhotos() {
             </div>
             <div className="w-[100%] grid gap-4 xl:gap-2 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-items-center content-center mt-10 md:mt-16 lg:mt-24 ">
                 <div className="w-[80vw] lg:w-[40vw] xl:w-[25vw] h-[50vh] lg:h-[40vh] xl:h-[50vh] rounded-xl overflow-hidden">
-                    <img src={ti1} alt="aaa" className="w-full h-full object-cover" />
+                    <img src={ti1} alt="aaa" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div className="w-[80vw] lg:w-[40vw] xl:w-[25vw] h-[25vh] lg:h-[40vh] xl:h-[50vh] rounded-xl overflow-hidden lg:block hidden ">
-                    <img src={ti2} alt="aaa" className="w-full h-full object-cover" />
+                    <img src={ti2} alt="aaa" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div className="w-[80vw] lg:w-[40vw] xl:w-[25vw] h-[25vh] lg:h-[40vh] xl:h-[50vh] rounded-xl overflow-hidden hidden xl:block">
-                    <img src={ti3} alt="aaa" className="w-full h-full object-cover " />
+                    <img src={ti3} alt="aaa" className="w-full h-full object-cover " loading="lazy" />
                 </div>
             </div>
 
