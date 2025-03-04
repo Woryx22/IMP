@@ -3,11 +3,11 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react
 import { Bars3Icon, XMarkIcon, UserCircleIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
-    { name: 'O mně', href: '#introduction', current: false },
-    { name: 'Nabídka', href: '#offer', current: false },
-    { name: 'Svatební focení', href: '#offer', current: false },
+    { name: 'Úvod', href: '#introduction', current: false },
     { name: 'Portfolio', href: '#offer', current: false },
-    { name: 'Kontakty', href: '#contact', current: false },
+    { name: 'Ceník', href: '#offer', current: false },
+    { name: 'Kontakt', href: '#offer', current: false },
+    { name: 'Galerie', href: '#contact', current: false },
 ];
 
 function classNames(...classes) {

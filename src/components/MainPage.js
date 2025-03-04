@@ -4,7 +4,10 @@ import Contact from "./Contact"
 import Header from "./Header"
 import Introduction from "./Introduction"
 import Main from "./Main"
-import Offer from "./Offer"
+import FamilyPhotos from "./FamilyPhotos"
+import WeddingPhotos from "./WeddingPhotos"
+import PairPhotos from "./PairPhotos"
+import HorsePhotos from "./HorsePhotos"
 
 
 const MainPage = () => {
@@ -13,8 +16,12 @@ const MainPage = () => {
           <Header />
           <Main />
           <Introduction />
-          <Offer />
+          <FamilyPhotos />
+          <WeddingPhotos/>
+          <PairPhotos/>
+          <HorsePhotos/>
           <Contact />
+          
 
       </div>
 

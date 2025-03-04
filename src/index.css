@@ -9,3 +9,10 @@
 html{
     scroll-behavior: smooth;
 }
+
+
+
+.bgk{
+    background-image: url("./images/ttkrkonose.jpg");
+}
+
