@@ -16,7 +16,7 @@ export default function FamilyPhotos() {
                     Na focení mohu přivést a sestavit fotokoutek.
                 </p>
             </div>
-            <div className="w-[100%] grid gap-4 xl:gap-2 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-items-center content-center mt-10 md:mt-16 lg:mt-36 xl:mt-42 ">
+            <div className="w-[100%] grid gap-4 xl:gap-2 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-items-center content-center mt-10 md:mt-16 lg:mt-24 ">
                 <div className="w-[80vw] lg:w-[40vw] xl:w-[25vw] h-[50vh] lg:h-[40vh] xl:h-[50vh] rounded-xl overflow-hidden">
                     <img src={ri1} alt="aaa" className="w-full h-full object-cover" />
                 </div>

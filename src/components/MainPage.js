@@ -8,6 +8,8 @@ import FamilyPhotos from "./FamilyPhotos"
 import WeddingPhotos from "./WeddingPhotos"
 import PairPhotos from "./PairPhotos"
 import HorsePhotos from "./HorsePhotos"
+import CookieConsent from "./CookieConsent"
+import Pricing from "./Pricing"
 
 
 const MainPage = () => {
@@ -20,8 +22,9 @@ const MainPage = () => {
           <WeddingPhotos/>
           <PairPhotos/>
           <HorsePhotos/>
+          <Pricing/>
           <Contact />
-          
+          <CookieConsent/>
 
       </div>
 
