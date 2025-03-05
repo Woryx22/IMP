@@ -8,7 +8,7 @@ Dynamický navbar, navigace stránkou přes odkazující tlačítka v navbaru, p
 
 # 4. Konzultace
 
-Částečně funkční administrace (jen se z nějaké neznámého důvodu při ukládání nepojmenjue obrázek správně ale jmenuje se "image" a já to zaboha nemůžu najít, proto se vždy uloží jen jeden).
+Částečně funkční administrace.
 
   Pro zprovoznění webu:
   
