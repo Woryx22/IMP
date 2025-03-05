@@ -20,20 +20,22 @@ export default function Contact() {
       .then(
         () => {
           console.log('SUCCESS!');
+          form.current.reset();
         },
         (error) => {
           console.log('FAILED...', error.text);
         },
       );
+
   };
 
   return (
 <div id="contact" className="bg-[#44456d] w-full min-h-screen bg-bottom bg-cover flex flex-col items-center py-12">
       <h2 className="text-white font-bold text-4xl mb-6">Kontakt</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-4/5 max-w-4xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-4/5 max-w-4xl mt-2 md:mt-20">
         
         {/* Contact Form */}
-        <div className="flex items-center justify-center w-full h-full">
+        <div className="flex items-center justify-center w-full h-full ">
           <form className="max-w-sm mx-auto" ref={form} onSubmit={sendEmail}>
             <div className="mb-5">
               <label htmlFor="base-input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jméno a příjmení</label>
@@ -52,8 +54,8 @@ export default function Contact() {
                            bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
                             dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
             </div>
-            <p className=" text-sm text-gray-500 dark:text-gray-400">Odesláním formuláře souhlasíte s <a href="#" className="text-blue-500 underline">Podmínkami</a></p>
-            <input type="submit" value="Odeslat" className="bg-[#7d7fbb] p-1.5 rounded-2xl mt-2"/>
+            <p className=" text-sm text-gray-500 dark:text-gray-400">Odesláním formuláře souhlasíte s <a href="/podminky" className="text-blue-500 underline">Podmínkami</a></p>
+            <input type="submit" value="Odeslat" className="bg-[#7d7fbb] p-1.5 rounded-2xl mt-2 hover:bg-[#4c50c7] font-bold text-white"/>
           </form>
         </div>
         {/* Contact Information */}

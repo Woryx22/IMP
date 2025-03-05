@@ -30,7 +30,7 @@ export default function Gallery() {
     };
 
     return (
-        <div className=" mx-auto p-4 bg-[#4c4d6e]">
+        <div id="galerie" className=" mx-auto p-4 bg-[#4c4d6e]">
             <h2 className="text-white font-bold text-4xl mb-6 text-center">Galerie</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {allImagesState.map((image) => (

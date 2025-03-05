@@ -8,12 +8,7 @@ export default function DisplayFotky({id, name, sort, loadAllImages}) {
 
     const deleteImage = () =>{
         axios.delete("http://localhost:3001/deleteImages", {params:{id:id, name:name}})
-        .then((queryResponse) => {
-            console.log(queryResponse.data)
-            
-        })
-
-        loadAllImages()
+        .then(() => loadAllImages());
     }
 
     return (

@@ -4,10 +4,12 @@ import { Bars3Icon, XMarkIcon, CameraIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
     { name: 'Úvod', href: '#introduction', current: false },
-    { name: 'Portfolio', href: '#offer', current: false },
-    { name: 'Ceník', href: '#offer', current: false },
-    { name: 'Kontakt', href: '#offer', current: false },
-    { name: 'Galerie', href: '#contact', current: false },
+    { name: 'Rodinné focení', href: '#familyphotos', current: false },
+    { name: 'Svatení focení', href: '#weddingphotos', current: false },
+    { name: 'Těhotenské/párové focení', href: '#pairphotos', current: false },
+    { name: 'Focení koní', href: '#horsephotos', current: false },
+    { name: 'Kontakt', href: '#contact', current: false },
+    { name: 'Galerie', href: '#galerie', current: false },
 ];
 
 function classNames(...classes) {
@@ -46,7 +48,7 @@ export default function Header() {
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
                     {/*Mobile*/}
-                    <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <div className="absolute inset-y-0 left-0 flex items-center xl:hidden">
                         {/* Mobile menu button */}
                         <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400
                          hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -57,11 +59,11 @@ export default function Header() {
                         </DisclosureButton>
                     </div>
 
-                    <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                    <div className="flex flex-1 items-center justify-center sxl:items-stretch xl:justify-start">
                         <div className="flex shrink-0 items-center xl:mr-10">
                             <span className="font-bold text-white"><a href="#main">Kateřina Horáčková</a></span>
                         </div>
-                        <div className="hidden sm:ml-6 sm:block">
+                        <div className="hidden xl:ml-6 xl:block">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
                                     <a
@@ -81,7 +83,7 @@ export default function Header() {
                     </div>
 
                     {/*Profile*/}
-                    <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-2 xl:static xl:inset-auto xl:ml-6 xl:pr-0">
                         <a 
                             href="https://www.instagram.com/khphoto_cz" target="_blank" rel="noopener noreferrer"
                             className="relative rounded-lg bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -91,7 +93,7 @@ export default function Header() {
                 </div>
             </div>
 
-            <DisclosurePanel className="sm:hidden">
+            <DisclosurePanel className="xl:hidden">
                 <div className="space-y-1 px-2 pb-3 pt-2">
                     {navigation.map((item) => (
                         <DisclosureButton

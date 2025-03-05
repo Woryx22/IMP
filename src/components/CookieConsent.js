@@ -19,13 +19,13 @@ const CookieConsent = () => {
 
     return (
         <div className="fixed bottom-4 left-4 right-4 bg-gray-900 text-white p-4 rounded-3xl shadow-lg flex items-center justify-between">
-            <p className="text-sm">Tento web používá cookies.</p>
+            <p className="text-sm">Tento web používá <a href="/podminky" className="text-blue-600">cookies</a>. </p>
             <div>
                 <button onClick={handleAccept} className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg ml-4">
-                    Přijmmout pouze nezbytné
+                    Přijmout pouze nezbytné
                 </button>
                 <button onClick={handleAccept} className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg ml-4">
-                    Přijmmout
+                    Přijmout
                 </button>
             </div>
 
