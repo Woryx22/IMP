@@ -6,7 +6,7 @@
 
 
 .bgi{
-    background-image: url("./images/imgbg.png");
+    background-image: url("./images/imgbg.webp");
 }
 html{
     scroll-behavior: smooth;
@@ -15,6 +15,6 @@ html{
 
 
 .bgk{
-    background-image: url("./images/aaaaaaaaaaaaaaaaaaaaa.jpg");
+    background-image: url("./images/intrbg.webp");
 }
 

@@ -29,7 +29,7 @@ export default function AdminLogin({ setIsAdminLoggedIn }) {
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
+        <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-white">
           Přihlášení
         </h2>
       </div>
@@ -37,7 +37,7 @@ export default function AdminLogin({ setIsAdminLoggedIn }) {
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <div>
           <div className="flex items-center justify-between">
-            <label htmlFor="password" className="block text-sm/6 font-medium text-gray-900">
+            <label htmlFor="password" className="block text-sm/6 font-medium text-white">
               Heslo
             </label>
           </div>
@@ -49,7 +49,7 @@ export default function AdminLogin({ setIsAdminLoggedIn }) {
               required
               autoComplete="current-password"
               onChange={(event) => setPasswordState(event.target.value)}
-              className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+              className="block w-full rounded-md bg-gray-100 px-3 py-1.5 text-base text-gray-600 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
             />
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function AdminLogin({ setIsAdminLoggedIn }) {
             className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             onClick={() => sendLogin()}
           >
-            Sign in
+            Přihlásit
           </button>
         </div>
       </div>

@@ -20,7 +20,7 @@ export default function DisplayFotky({id, name, sort, loadAllImages}) {
             </figure>
             <div class="card-body">
                 <h2 class="card-title">{name}</h2>
-                <p>Sort: {sort}</p>
+                {/* <p>Sort: {sort}</p> */}
                 <div class="card-actions justify-end">
                     <button class="btn btn-primary" onClick={() => {deleteImage()}}>Smazat</button>
                 </div>

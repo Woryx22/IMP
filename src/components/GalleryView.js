@@ -4,7 +4,7 @@ import "../index.css";
 
 export default function Gallery() {
     const [allImagesState, setAllImageState] = useState([]);
-    const [selectedImage, setSelectedImage] = useState(null); // Stav pro vybraný obrázek
+    const [selectedImage, setSelectedImage] = useState(null); // vybranej obrázek
 
     useEffect(() => {
         loadAllImages();
@@ -30,24 +30,25 @@ export default function Gallery() {
     };
 
     return (
-        <div id="galerie" className=" mx-auto p-4 bg-[#4c4d6e]">
-            <h2 className="text-white font-bold text-4xl mb-6 text-center">Galerie</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {allImagesState.map((image) => (
-                    <div
-                        key={image._id}
-                        className="relative group cursor-pointer hover:scale-105"
-                        onClick={() => openImageModal(image)} // Otevření obrázku po kliknutí
-                    >
-                        <img
-                            src={'http://localhost:3001/galery/' + image.name + ".jpg"}
-                            alt={image.name}
-                            className="w-full h-auto rounded-lg shadow-md"
-                            loading="lazy"
-                        />
-                    </div>
-                ))}
+        <div id="galerie" className="mx-auto p-6 bg-[#4c4d6e]">
+    <h2 className="text-white font-bold text-4xl mb-8 text-center">Galerie</h2>
+    
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6">
+        {allImagesState.map((image) => (
+            <div
+                key={image._id}
+                className="relative group cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+                onClick={() => openImageModal(image)}
+            >
+                <img
+                    src={'http://localhost:3001/galery/' + image.name + ".jpg"}
+                    alt={image.name}
+                    className="w-full h-64 object-cover rounded-lg shadow-lg"
+                    loading="lazy"
+                />
             </div>
+        ))}
+    </div>
 
             {/* Modální okno pro zobrazení zvětšeného obrázku */}
             {selectedImage && (

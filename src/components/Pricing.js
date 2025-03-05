@@ -2,15 +2,15 @@ import React from "react";
 
 const Pricing = () => {
   return (
-    <div className="text-white min-h-screen flex flex-col items-center justify-center bg-[#4c4d6e] p-6">
+    <div id="pricing" className="text-white min-h-screen flex flex-col items-center justify-center bg-[#4c4d6e] p-6">
       <div className="max-w-4xl w-full bg-[#44456d] shadow-lg rounded-2xl p-6">
         <h2 className="text-3xl font-bold text-center mb-6">Ceník</h2>
         
         <div className="mb-6">
-          <h3 className="text-xl font-bold">Rodinné/ párové/ těhotenské focení</h3>
+          <h3 className="text-xl font-bold">Rodinné / párové / těhotenské focení</h3>
           <p className="text-lg font-semibold">Cena: 1 500,-</p>
           <p>Výsledkem je 15 upravených fotek předané v elektronické podobě</p>
-          <p>Foceni trvá 30-60 minut</p>
+          <p>Focení trvá 30-60 minut</p>
         </div>
         
         <div className="mb-6 ">
@@ -33,7 +33,7 @@ const Pricing = () => {
           <div className="mt-4 ml-2">
             <h4 className="text-lg font-bold">Celodenní balíček</h4>
             <p className="text-lg font-semibold">Cena: 11 500,-</p>
-            <p>Foceni v časovém rámci 11-12 hodin Vašeho svatebního dne</p>
+            <p>Focení v časovém rámci 11-12 hodin Vašeho svatebního dne</p>
             <p>Doprava do 50 km z výjezdního místa zdarma (Vrchlabí)</p>
             <p>Balíček obsahuje po dokončení upravení všech fotek krabičku obsahující tištěné fotografie (15 ks ve formátu 10x15 cm) + USB flashku</p>
           </div>

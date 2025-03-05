@@ -11,6 +11,7 @@ import HorsePhotos from "./HorsePhotos"
 import CookieConsent from "./CookieConsent"
 import Pricing from "./Pricing"
 import GalleryView from "./GalleryView"
+import Footer from "./Footer"
 
 
 const MainPage = () => {
@@ -27,6 +28,7 @@ const MainPage = () => {
           <Contact />
           <CookieConsent/>
           <GalleryView/>
+          <Footer/>
 
       </div>
 
