@@ -13,7 +13,7 @@ export default function AdminLogin({ setIsAdminLoggedIn }) {
 
     // Odeslání hashe na server
     try {
-      const response = await axios.get(process.env.REACT_APP_BACKEND_URL + "/adminLogin", { params: { password: hashedPassword } });
+      const response = await axios.get(axios.defaults.baseURL + "/adminLogin", { params: { password: hashedPassword } });
       console.log(response.data);
       if (response.data === "SUCCESS") {
         setIsAdminLoggedIn(true);

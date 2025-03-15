@@ -12,13 +12,13 @@ const fs = require("fs")
 require('dotenv').config({ path: '../.env' })
 
 // var url = "mongodb://localhost:27017/IMP";
-var url = process.env.REACT_APP_MONGO_STRING;
+var url = process.env.REACT_APP_MONGO_STRING || "mongodb://localhost:27017/IMP";
 
 console.log(url)
 
-mongoose.connect(url)
+mongoose.connect(url).then(()=>console.log(url)).catch((err)=>console.log(err))
 const app = express()
-const port = process.env.REACT_APP_BACKEND_PORT;
+const port = process.env.REACT_APP_BACKEND_PORT || 4000;
 
 const storage = multer.diskStorage({
     destination: function (req,file, callback) {

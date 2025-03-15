@@ -30,7 +30,7 @@ export default function AdminPage({isAdminLoggedIn}) {
     }
 
     const loadAllImages = () =>{
-        axios.get(process.env.REACT_APP_BACKEND_URL +"/getAllImages")
+        axios.get(axios.defaults.baseURL +"/getAllImages")
         .then((queryResponse) => {
             console.log(queryResponse.data)
             setAllImageState(queryResponse.data)
@@ -50,7 +50,7 @@ export default function AdminPage({isAdminLoggedIn}) {
         var formData = new FormData();
         formData.append("image", imageState, imageState.name)
         console.log(imageState)
-        axios.post(process.env.REACT_APP_BACKEND_URL +"/uploadImage", formData)
+        axios.post(axios.defaults.baseURL +"/uploadImage", formData)
             .then(() => loadAllImages());
         //     ((queryResponse) => {
         //         console.log(queryResponse.data)

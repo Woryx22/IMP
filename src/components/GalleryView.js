@@ -11,7 +11,7 @@ export default function Gallery() {
     }, []);
 
     const loadAllImages = () => {
-        axios.get(process.env.REACT_APP_BACKEND_URL +"/getAllImages")
+        axios.get(axios.defaults.baseURL +"/getAllImages")
             .then((queryResponse) => {
                 console.log(queryResponse.data);
                 setAllImageState(queryResponse.data);
@@ -41,7 +41,7 @@ export default function Gallery() {
                 onClick={() => openImageModal(image)}
             >
                 <img
-                    src={process.env.REACT_APP_BACKEND_URL +'/galery/' + image.name + ".jpg"}
+                    src={axios.defaults.baseURL +'/galery/' + image.name + ".jpg"}
                     alt={image.name}
                     className="w-full h-64 object-cover rounded-lg shadow-lg"
                     loading="lazy"
@@ -58,7 +58,7 @@ export default function Gallery() {
                 >
                     <div className="relative max-w-full max-h-full">
                         <img
-                            src={process.env.REACT_APP_BACKEND_URL +'/galery/' + selectedImage.name + ".jpg"}
+                            src={axios.defaults.baseURL +'/galery/' + selectedImage.name + ".jpg"}
                             alt={selectedImage.name}
                             className="max-w-full max-h-screen rounded-lg"
                             loading="lazy"
