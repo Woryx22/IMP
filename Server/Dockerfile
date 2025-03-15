@@ -7,4 +7,6 @@ RUN npm install
 
 COPY Server . 
 
+EXPOSE 4000
+
 CMD ["node", "index.js"]

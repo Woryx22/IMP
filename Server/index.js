@@ -14,6 +14,8 @@ require('dotenv').config({ path: '../.env' })
 // var url = "mongodb://localhost:27017/IMP";
 var url = process.env.REACT_APP_MONGO_STRING;
 
+console.log(url)
+
 mongoose.connect(url)
 const app = express()
 const port = process.env.REACT_APP_BACKEND_PORT;
