@@ -7,7 +7,7 @@ import axios from "axios"
 export default function DisplayFotky({id, name, sort, loadAllImages}) {
 
     const deleteImage = () =>{
-        axios.delete("http://localhost:3001/deleteImages", {params:{id:id, name:name}})
+        axios.delete(process.env.REACT_APP_BACKEND_URL +"/deleteImages", {params:{id:id, name:name}})
         .then(() => loadAllImages());
     }
 
@@ -15,7 +15,7 @@ export default function DisplayFotky({id, name, sort, loadAllImages}) {
         <div class="card bg-base-100 w-96 shadow-xl">
             <figure>
                 <img
-                    src={'http://localhost:3001/galery/' + name + ".jpg"}
+                    src={process.env.REACT_APP_BACKEND_URL +'/galery/' + name + ".jpg"}
                     alt="Shoes" />
             </figure>
             <div class="card-body">

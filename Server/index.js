@@ -9,12 +9,14 @@ const bcrypt = require('bcryptjs');
 
 const fs = require("fs")
 
+require('dotenv').config({ path: '../.env' })
+
 // var url = "mongodb://localhost:27017/IMP";
-var url = "mongodb://mongo:27017/IMP";
+var url = process.env.REACT_APP_MONGO_STRING;
 
 mongoose.connect(url)
 const app = express()
-const port = 3001
+const port = process.env.REACT_APP_BACKEND_PORT;
 
 const storage = multer.diskStorage({
     destination: function (req,file, callback) {
