@@ -9,7 +9,8 @@ const bcrypt = require('bcryptjs');
 
 const fs = require("fs")
 
-var url = "mongodb://localhost:27017/IMP";
+// var url = "mongodb://localhost:27017/IMP";
+var url = "mongodb://mongo:27017/IMP";
 
 mongoose.connect(url)
 const app = express()
