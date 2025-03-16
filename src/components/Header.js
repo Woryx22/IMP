@@ -89,7 +89,7 @@ export default function Header() {
                         <a 
                             href="https://www.instagram.com/khphoto_cz" target="_blank" rel="noopener noreferrer"
                             className="relative rounded-lg  p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                            <img src={igi} alt="" className='w-8 ' />
+                            <img src={igi} alt="instagram-ikona" className='w-8 ' />
                         </a>
                     </div>
                 </div>

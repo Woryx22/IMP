@@ -12,7 +12,8 @@ import { useState } from "react"
 const App = () => {
   
   axios.defaults.baseURL=process.env.REACT_APP_BACKEND_URL || "http://localhost:4000"
-  
+  console.log(axios.defaults.baseURL);
+
 const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false)
 
   return (

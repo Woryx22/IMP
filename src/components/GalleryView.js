@@ -11,7 +11,7 @@ export default function Gallery() {
     }, []);
 
     const loadAllImages = () => {
-        axios.get(axios.defaults.baseURL +"/getAllImages")
+        axios.get("https://api.katerinasfotakem.cz/getAllImages")
             .then((queryResponse) => {
                 console.log(queryResponse.data);
                 setAllImageState(queryResponse.data);
@@ -41,7 +41,7 @@ export default function Gallery() {
                 onClick={() => openImageModal(image)}
             >
                 <img
-                    src={axios.defaults.baseURL +'/galery/' + image.name + ".jpg"}
+                    src={"https://api.katerinasfotakem.cz/galery/" + image.name + ".jpg"}
                     alt={image.name}
                     className="w-full h-64 object-cover rounded-lg shadow-lg"
                     loading="lazy"
@@ -58,7 +58,7 @@ export default function Gallery() {
                 >
                     <div className="relative max-w-full max-h-full">
                         <img
-                            src={axios.defaults.baseURL +'/galery/' + selectedImage.name + ".jpg"}
+                            src={"https://api.katerinasfotakem.cz/galery/" + selectedImage.name + ".jpg"}
                             alt={selectedImage.name}
                             className="max-w-full max-h-screen rounded-lg"
                             loading="lazy"

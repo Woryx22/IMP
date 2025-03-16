@@ -30,7 +30,7 @@ export default function AdminPage({isAdminLoggedIn}) {
     }
 
     const loadAllImages = () =>{
-        axios.get(axios.defaults.baseURL +"/getAllImages")
+        axios.get("https://api.katerinasfotakem.cz/getAllImages")
         .then((queryResponse) => {
             console.log(queryResponse.data)
             setAllImageState(queryResponse.data)
@@ -50,7 +50,7 @@ export default function AdminPage({isAdminLoggedIn}) {
         var formData = new FormData();
         formData.append("image", imageState, imageState.name)
         console.log(imageState)
-        axios.post(axios.defaults.baseURL +"/uploadImage", formData)
+        axios.post("https://api.katerinasfotakem.cz/uploadImage", formData)
             .then(() => loadAllImages());
         //     ((queryResponse) => {
         //         console.log(queryResponse.data)

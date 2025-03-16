@@ -7,7 +7,7 @@ import axios from "axios"
 export default function DisplayFotky({id, name, sort, loadAllImages}) {
 
     const deleteImage = () =>{
-        axios.delete(axios.defaults.baseURL +"/deleteImages", {params:{id:id, name:name}})
+        axios.delete("https://api.katerinasfotakem.cz/deleteImages", {params:{id:id, name:name}})
         .then(() => loadAllImages());
     }
 
@@ -15,7 +15,7 @@ export default function DisplayFotky({id, name, sort, loadAllImages}) {
         <div class="card bg-base-100 w-96 shadow-xl">
             <figure>
                 <img
-                    src={axios.defaults.baseURL +'/galery/' + name + ".jpg"}
+                    src={"https://api.katerinasfotakem.cz/galery/" + name + ".jpg"}
                     alt="Shoes" />
             </figure>
             <div class="card-body">

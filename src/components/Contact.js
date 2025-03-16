@@ -63,7 +63,7 @@ export default function Contact() {
           <p className="text-xl font-semibold">Kateřina Horáčková</p>
           <p>📞 <a href="tel:+420605816845" className="hover:underline">605 816 845</a></p>
           <p>📧 <a href="mailto:katerinasfotakem@seznam.cz" className="hover:underline">katerinasfotakem@seznam.cz</a></p>
-          <p> <img src={igi} alt="" className="inline w-5" loading="lazy" /> <a href="https://www.instagram.com/khphoto_cz" target="_blank" rel="noopener noreferrer" className="hover:underline">@khphoto_cz</a></p>
+          <p> <img src={igi} alt="instagram-ikona" className="inline w-5" loading="lazy" /> <a href="https://www.instagram.com/khphoto_cz" target="_blank" rel="noopener noreferrer" className="hover:underline">@khphoto_cz</a></p>
         </div>
       </div>
     </div>

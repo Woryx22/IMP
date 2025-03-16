@@ -18,6 +18,7 @@ console.log(url)
 
 mongoose.connect(url).then(()=>console.log(url)).catch((err)=>console.log(err))
 const app = express()
+app.use(cors());
 const port = process.env.REACT_APP_BACKEND_PORT || 4000;
 
 const storage = multer.diskStorage({
@@ -35,9 +36,11 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage:storage})
 
-app.use(cors());
+
 
 app.use(express.static(path.join(__dirname, "/images")))
+
+
 
 app.get('/', (req, res) =>{
     res.send("lomeno")
