@@ -6,7 +6,7 @@ import igi from "../images/instagram.png";
 const navigation = [
     { name: 'Úvod', href: '#introduction', current: false },
     { name: 'Rodinné focení', href: '#familyphotos', current: false },
-    { name: 'Svatení focení', href: '#weddingphotos', current: false },
+    { name: 'Svatební focení', href: '#weddingphotos', current: false },
     { name: 'Těhotenské/párové focení', href: '#pairphotos', current: false },
     { name: 'Focení koní', href: '#horsephotos', current: false },
     { name: 'Ceník', href: '#pricing', current: false },
